@@ -15,7 +15,7 @@ SQLDDLSELECT = '''
 SQLDDLINSERT = '''INSERT INTO juegos (juego) VALUES '''
                 #Hay que concatenar  ('juego')
 
-SQLDDLUPDATEPART1 = '''UPDATE juego SET juego = "'''
+SQLDDLUPDATEPART1 = '''UPDATE juegos SET juego = "'''
 SQLDDLUPDATEPART2 = '''" WHERE id = '''
 
 SQLDDLDELETE = '''DELETE FROM juegos WHERE id = '''
