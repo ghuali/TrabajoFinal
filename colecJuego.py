@@ -12,15 +12,15 @@ SQLDDLSELECT = '''
     SELECT * FROM juego
 '''
 
-SQLDDLINSERT = '''INSERT INTO juegos (juego) VALUES '''
+SQLDDLINSERT = '''INSERT INTO juego (juego) VALUES '''
                 #Hay que concatenar  ('juego')
 
-SQLDDLUPDATEPART1 = '''UPDATE juegos SET juego = "'''
+SQLDDLUPDATEPART1 = '''UPDATE juego SET nombre = "'''
 SQLDDLUPDATEPART2 = '''" WHERE id = '''
 
-SQLDDLDELETE = '''DELETE FROM juegos WHERE id = '''
+SQLDDLDELETE = '''DELETE FROM juego WHERE id = '''
 
-SQLDDLSELECT1 = '''SELECT id FROM juegos WHERE juego LIKE '''
+SQLDDLSELECT1 = '''SELECT id FROM juego WHERE nombre LIKE '''
                 #Hay que concatenar
 
 
