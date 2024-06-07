@@ -3,8 +3,8 @@ from plataforma import Plataforma
 
 SQLMDLCREATE = '''
     CREATE TABLE IF NOT EXISTS plataforma (
-	id INTEGER  AUTOINCREMENT,
-   	nombre TEXT NOT NULL PRIMARY KEY
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+   	nombre TEXT NOT NULL 
 )
 '''
 

@@ -3,8 +3,8 @@ from juego import Juego
 
 SQLMDLCREATE = '''
     CREATE TABLE IF NOT EXISTS juego (
-	id INTEGER  AUTOINCREMENT,
-   	nombre TEXT NOT NULL PRIMARY KEY
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+   	nombre TEXT NOT NULL 
 )
 '''
 
@@ -12,7 +12,7 @@ SQLDDLSELECT = '''
     SELECT * FROM juego
 '''
 
-SQLDDLINSERT = '''INSERT INTO juego (juego) VALUES '''
+SQLDDLINSERT = '''INSERT INTO juego (nombre) VALUES '''
                 #Hay que concatenar  ('juego')
 
 SQLDDLUPDATEPART1 = '''UPDATE juego SET nombre = "'''
@@ -36,20 +36,20 @@ class ColeccionJuego:
     def leer(self)->str:
         return self.con.execute(SQLDDLSELECT).fetchall()
     
-    def insertar(self, juego):
-        if self.buscar(juego) == 0:
-            elstr = "('" + str(juego) + "')"
+    def insertar(self, nombre):
+        if self.buscar(nombre) == 0:
+            elstr = "('" + str(nombre) + "')"
             self.con.execute(SQLDDLINSERT + elstr)
 
-    def actualizar(self, oldjuego:str, newjuego:str):
-        id = self.buscar(oldjuego)
-        if id != 0 and self.buscar(newjuego) == 0:
-            elstr = SQLDDLUPDATEPART1 + newjuego 
+    def actualizar(self, oldnombre:str, newnombre:str):
+        id = self.buscar(oldnombre)
+        if id != 0 and self.buscar(newnombre) == 0:
+            elstr = SQLDDLUPDATEPART1 + newnombre 
             elstr += SQLDDLUPDATEPART2 + str(id)
             self.con.execute(elstr)
 
-    def borrar(self, juego):
-        id = self.buscar(juego) 
+    def borrar(self, nombre):
+        id = self.buscar(nombre) 
         if id != 0:
             self.con.execute(SQLDDLDELETE + str(id))
 

@@ -3,8 +3,8 @@ from genero import Genero
 
 SQLMDLCREATE = '''
     CREATE TABLE IF NOT EXISTS genero (
-	id INTEGER  AUTOINCREMENT,
-   	nombre TEXT NOT NULL PRIMARY KEY
+	id INTEGER RIMARY KEY AUTOINCREMENT,
+   	nombre TEXT NOT NULL 
 )
 '''
 
